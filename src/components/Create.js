@@ -19,7 +19,7 @@ export const Create =() => {
     const pressHandler = async  event => {
         if (event.key === 'Enter') {
             try {
-               const data = await request('/api/link/generate','POST',{from:link},{
+               const data = await request('https://guarded-journey-36681.herokuapp.com/api/link/generate','POST',{from:link},{
                    Authorization:`Bearer ${auth.token}`
                })
                console.log('После нажатия',data)

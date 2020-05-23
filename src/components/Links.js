@@ -2,7 +2,7 @@ import React, {Fragment, useCallback, useContext, useEffect, useState} from 'rea
 import {useHttp} from "../hooks/http.hook";
 import {AuthContext} from "../context/auth.context";
 import {Loader} from "./Loader";
-import {LinksList} from "./LinkLinks";
+import {LinksList} from "./LinkList";
 
 export const Links =() => {
     const [links,setLinks] = useState([])
@@ -11,7 +11,7 @@ export const Links =() => {
 
     const fetchLinks = useCallback(async () => {
         try {
-            const fetched = await request('/api/link','GET',null, {
+            const fetched = await request('https://guarded-journey-36681.herokuapp.com/api/link','GET',null, {
                 Authorization: `Bearer ${token} `
                 })
             setLinks(fetched)

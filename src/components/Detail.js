@@ -15,7 +15,7 @@ export const Detail =() => {
 
     const getLink = useCallback(async () => {
         try {
-            const fetched = await request(`/api/link/${linkId}`, 'GET', null, {
+            const fetched = await request(`https://guarded-journey-36681.herokuapp.com/api/link/${linkId}`, 'GET', null, {
                 Authorization:`Bearer ${token} `
 
             })
